@@ -32,7 +32,7 @@ jobs:
           name: wanrenzhizun/softether
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          tags: "${{env.SE_VERSION}}-latest,${{SE_REVISION}}-latest"
+          tags: "${{ env.SE_VERSION }}-latest,${{SE_REVISION}}-latest"
           dockerfile: Dockerfile
           buildargs: BUILD_VERSION,SHA256_SUM
 
