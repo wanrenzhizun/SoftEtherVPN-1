@@ -5,6 +5,7 @@ ARG SHA256_SUM=00000000d
 ENV BUILD_VERSION=${BUILD_VERSION} \
     SHA256_SUM=${SHA256_SUM}
 
+
 RUN wget https://github.com/wanrenzhizun/SoftEtherVPN_Stable/archive/v${BUILD_VERSION}.tar.gz \
     && echo "${SHA256_SUM}  v${BUILD_VERSION}.tar.gz" | sha256sum -c \
     && mkdir -p /usr/local/src \
