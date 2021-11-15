@@ -1,7 +1,6 @@
 dist: trusty
 sudo: required
 
-
 jobs:
   include:
     - stage: Docker Build
