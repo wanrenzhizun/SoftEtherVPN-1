@@ -1,23 +1,31 @@
 name: Docker Image CI
 
 on:
-  push:
-    paths:
-      - '*'
-      - '!README.md'
-      - '!push-tags.sh'
-  pull_request:
-    paths:
-      - '*'
-      - '!README.md'
-      - '!push-tags.sh'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: '版本号：'
+        required: true
+        default: '4.38'
+      reversion:
+        description: '版本后缀：'
+        required: true
+        default: '9760'
+      bversion:
+        description: '版本标签（不带v）：'
+        required: true
+        default: '4.38-9760-rtm1'
+      sha256sum:
+        description: 'sha256sum：'
+        required: true
+        default: '0216a1838ecd841f26ab1a8d34c6f9432e630cee235926b119d6d981a2970afb'
 
 
 env:
-  SE_VERSION: "4.38"
-  SE_REVISION: "9760"
-  BUILD_VERSION: "4.38-9760-rtm1"
-  SHA256_SUM: "0216a1838ecd841f26ab1a8d34c6f9432e630cee235926b119d6d981a2970afb"
+  SE_VERSION: ${{ github.event.inputs.version }}
+  SE_REVISION: ${{ github.event.inputs.reversion }}
+  BUILD_VERSION: ${{ github.event.inputs.bversion }}
+  SHA256_SUM: ${{ github.event.inputs.sha256sum }}
 
 
 jobs:
