@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Publish to Registry latest
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: wanrenzhizun/softether
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -45,7 +45,7 @@ jobs:
           buildargs: BUILD_VERSION,SHA256_SUM
 
       - name: Publish to Registry centos
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: wanrenzhizun/softether
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -55,7 +55,7 @@ jobs:
           buildargs: BUILD_VERSION,SHA256_SUM
 
       - name: Publish to Registry alpine
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: wanrenzhizun/softether
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -65,7 +65,7 @@ jobs:
           buildargs: BUILD_VERSION,SHA256_SUM
 
       - name: Publish to Registry debian
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: wanrenzhizun/softether
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -75,7 +75,7 @@ jobs:
           buildargs: BUILD_VERSION,SHA256_SUM
 
       - name: Publish to Registry ubuntu
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: wanrenzhizun/softether
           username: ${{ secrets.DOCKER_USERNAME }}
